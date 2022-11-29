@@ -12,33 +12,36 @@
     <script src="index.js" defer></script>
 </head>
 <body> 
-    <div class="container">
+    .    <form action="" class="form">
         <h1>Bookmarker</h1>
         <div class="name">
-            <input type="text" class="siteName" placeholder="Site Name" required>
+            <input type="text" class="siteName" name="name" placeholder="Site Name" required>
         </div><br>
 
         <div class="url">
-            <input type="text" class="siteUrl" placeholder="Site url" required>
+            <input type="text" class="siteUrl" name="url" placeholder="Site url" required>
         </div>
         <div class="category">
-            <input type="text" class="cat" placeholder="category" required>
+            <input type="text" class="cat" name="category" placeholder="category" required>
         </div>
         <div class="des">
-            <textarea name="Description" class="des" cols="27" rows="7" placeholder="description"></textarea>
+            <textarea name="description" class="des" cols="27" rows="7" placeholder="description"></textarea>
         </div>
         <button id="addBtn">Save</button>
-    
-        </div>
-        <div class="card">
-        <div class="card-image"></div>
+</form>
+
+    <div class="card">
         <div class="card-text">
-            <span class="name">Title</span>
-            <h2>Bookmark</h2>
-            <h2>Category</h2>
-            <p>Description</p>
+            <span class="name">Site Name</span>
+            <h2 class="cat" >Category</h2>
+            <p class="descript" >Description</p>
         </div>
         <div class="card-stats">
+            <div>
+                <a href="">
+                    <input id="visit" type="button" value="VISIT">
+                </a>
+            </div>
         </div>
     </div>
 </body>

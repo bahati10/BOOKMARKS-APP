@@ -1,42 +1,36 @@
-const form = document.getElementsByClassName('container');
-const cards = document.getElementsByClassName('card'); 
-
-const toBase64 = file => new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
-
-});
+const form = document.querySelector(".form");
+const card = document.querySelector(".card");
 
 const all_items = JSON.parse(localStorage.getItem("items"));
 
 all_items?.map((item) => {
-    CanvasGradient.innerHTML += 
-`</div>
-<div class="card">
-<div class="card-image"></div>
-<div class="card-text">
-    <span class="name">${item.Title}</span>
-    <h2>${item.Bookmark}</h2>
-    <p>${item.Description}
-    </p>
-</div>
-</div>`
+   card.innerHTML += `
+        <div class="card">
+      <div class="card-text">
+            <span       class="name">${item.name}</span>
+            <h2>${item.category}</h2>
+            <p>${item.description}</p>
+        </div>
+        <div class="card-stats">
+           <div>
+                <a href="${item.url}">
+                     <input id="visit" type="button" value="VISIT">
+                </a>
+            </div>
+        </div>
+    </div>`
 })
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const title = e.target.siteName.value;
-    const url = e.target.siteUrl.value;
-    const cat = e.target.cat.value;
-    const des = e.target.des.value
+   const name = e.target.name.value;
+   const url = e.target.url.value;
+   const category = e.target.category.value;
+const description = e.target.description.value;
+
+const data = {
+    name, url, category, description
 }
-)
-
-const data = {title, Description, category}
-
-
 const items = localStorage.getItem("items");
 
 if(items){
@@ -48,9 +42,6 @@ if(items){
 if(!items){
     localStorage.setItem("items", JSON.stringify([data]));
     window.location.reload();
-
+  
 }
-
-
-
-
+})

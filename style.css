@@ -1,7 +1,8 @@
 body{
+    padding-bottom: 50%;
     display: flex;
     align-items: center;
-    background: #232C33;
+    background: #000D11;
     justify-content: center;
     flex-wrap: wrap;
     overflow: scroll;
@@ -13,55 +14,63 @@ body::-webkit-scrollbar {
 }
 
 .theCard{
-    margin-top: 90em;
+  border-radius: 3px;
+  margin-top: 90em;
 }
+
 
 .card{
     position: absolute;
-    margin-top: 90%;
+    margin-top: 80em;
+    margin-bottom: 40px;
     display: grid;
-    grid-template-columns: 300px;
-    grid-template-rows: 210px 210px 70px;
+    justify-content: space-between;
+    grid-template-columns: 540px;
+    grid-template-rows: 230px 230px 70px;
     grid-template-areas: 'image' 'text' 'stats';
     font-family: roboto;
-    border-radius: 18px;
-    background: white;
-    box-shadow: 3px 3px 10px grey;
+    border-radius: 7px;  
+    background: #ACBFA4;
+    box-shadow: 1px 1px 2px grey;
     text-align: center;
 
     transition: 0.5s ease;
     cursor: pointer;
 }
 
-
-.card-image{
-    grid-area: image;
-    background: url("IMG/img.jpg");
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    background-size: cover;
-}
-
 .card-text {
+    top: -80%;
     grid-area: text;
     margin: 25px;
+    bottom: 70%;
+    position: relative;
 }
 
 .card-text .name{
-    color: #B10F2E;
-    font-size: 20px;
+    color: #003049;
+    font-size: 30px;
 }
 
 .card-text p{
-color: grey;
-font-size: 15px;
-font-weight: 300;
+color: #003049;
+font-size: 18px;
+font-weight: 800;
+padding-bottom: 100px;
+text-align: center;
 }
 
-.card-text h2{
-    margin-top: 0px;
-    font-size: 28px;
+.card-text p::-webkit-scrollbar { 
+    display: none;
+}
 
+.card-text .cat{
+    padding: 8px;
+    font-size: 24px;
+  
+}
+
+.card-text h2 .bookmark::-webkit-scrollbar { 
+    display: none;
 }
 
 .card-stats {
@@ -69,59 +78,42 @@ font-weight: 300;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background: #1a1b41;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: #003049;
 }
 
-.card-stats .stat{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
-    color: white;
-}
-
-.card-stats button{
-    border-radius: 3px;
-    font-weight:600;
-    color: white;
-    font-size: 11px;
-    font-weight: 300;
-    text-transform: uppercase;
-}
-
-#visitBtn{
-    padding: 10px 20px;
-    background: #6B7FD7;
-    border: none;
-}
-
-#deleteBtn{
-    padding: 10px;
-    background: #B10F2E;
-    border: none;
-}
 
 .card:hover{
-    transform: scale(1.1);
-    box-shadow: 5px 5px 15px black;
+    box-shadow: 1px 1px 12px black;
 }
 
  
-.container {
+.form {
     text-align: center;
     width: 20%;
     padding: 5% 10%;
-    background: #263152;
+    background: #003049;
     color: white;
     border-radius: 7px;
     margin: auto;
+    margin-top: 10px;
 }
 
-.container h1{
+.form h1{
     margin-top: -10px;
+}
+
+.des:focus {
+    outline:none!important;
+}
+
+.des::placeholder {
+  border: 2px9solid red; 
+  position: absolute;
+  margin-left: 27px;
+  font-size: 0.9em;
+  word-spacing: 300px;
 }
 
 #addBtn{
@@ -133,7 +125,8 @@ font-weight: 300;
     background: #2B9AF0;
     color: white;    
     font-weight: bold;
-
+    transition: 1s;
+    text-transform: uppercase;
 }
 
 #addBtn:hover{
@@ -149,8 +142,12 @@ input{
     border: none;
 }
 
+input:focus {
+    outline:none!important;
+}
+
 .saved {
-    border: 2px solid red;
+
     width: 20%;
     margin-left: auto;
     margin-right: auto;
@@ -162,22 +159,16 @@ input{
     display: flex;
 }
 
-.delete{
-    display: flex;
-    width: 30px;
-    background: #2B9AF0;
-}
 
 .main{
     width: 20%;
     padding: 7% 5%;
     background: #263152;
     color: white;
-    border-radius: 7px;
+    border-radius: 3px;
 }
-
 .des{
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 textarea{
@@ -188,3 +179,36 @@ textarea{
 .cat{
     margin-top: 20px
 }
+
+#visit{
+    text-align: center;
+    display: flex;
+    margin-top: 18px;
+    margin-left: 224px;
+    font-size: 0.9em;
+    padding: 10px 34px;
+    border-radius: 4px;
+    border: none;
+    background: #2B9AF0;
+    color: white;    
+    font-weight: bold;
+    transition: 1s;
+}
+
+a {
+    text-decoration: none;
+}
+
+#visit:hover{
+    box-shadow: 0 0 3px;
+}
+footer{
+  position: absolute;
+  color: green;
+  font-size: 1em;
+  margin-top: 135%;
+  font-family: 'Righteous', cursive;
+  color: #CBF7ED;
+  font-weight: 400;
+}
+
